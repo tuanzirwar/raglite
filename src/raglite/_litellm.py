@@ -178,7 +178,7 @@ class LlamaCppPythonLLM(CustomLLM):
             recommended_settings = {"temperature": 0.6, "min_p": 0.0, "top_p": 0.95, "top_k": 20}
         return {**recommended_settings, **llama_cpp_python_params}
 
-    def completion(  # noqa: PLR0913
+    def completion(  # noqa: PLR0913, PLR0917
         self,
         model: str,
         messages: list[llama_types.ChatCompletionRequestMessage],
@@ -213,7 +213,7 @@ class LlamaCppPythonLLM(CustomLLM):
         )
         return litellm_model_response
 
-    def streaming(  # noqa: PLR0913
+    def streaming(  # noqa: PLR0913, PLR0917
         self,
         model: str,
         messages: list[llama_types.ChatCompletionRequestMessage],
@@ -275,7 +275,7 @@ class LlamaCppPythonLLM(CustomLLM):
             )
             yield litellm_generic_streaming_chunk
 
-    async def astreaming(  # type: ignore[misc,override]  # noqa: PLR0913
+    async def astreaming(  # type: ignore[misc,override]  # noqa: PLR0913, PLR0917
         self,
         model: str,
         messages: list[llama_types.ChatCompletionRequestMessage],

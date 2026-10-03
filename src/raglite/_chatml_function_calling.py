@@ -112,7 +112,7 @@ def _convert_chunks_to_completion(
     return completion
 
 
-def _stream_tool_calls(
+def _stream_tool_calls(  # noqa: PLR0917
     llama: llama.Llama,
     prompt: str,
     tools: List[llama_types.ChatCompletionTool],
@@ -227,7 +227,7 @@ def _convert_text_completion_logprobs_to_chat(
     )
 
 
-def chatml_function_calling_with_streaming(
+def chatml_function_calling_with_streaming(  # noqa: PLR0917
     llama: llama.Llama,
     messages: List[llama_types.ChatCompletionRequestMessage],
     functions: List[llama_types.ChatCompletionFunction] | None = None,
